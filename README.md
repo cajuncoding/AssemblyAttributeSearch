@@ -1,5 +1,5 @@
 # AssemblyAttributeSearch
-This is a small library/helper to provide greatly simplified convenience methods for dynamically finding, filtering, 
+This is a small small .Net Standard library/helper to provide greatly simplified convenience methods for dynamically finding, filtering, 
 and initializing classes based on Custom Attributes. It provides a simpel convenience methods to allow searching 
 for all instances of a Custom Attribute type. 
 
@@ -43,6 +43,14 @@ var jediMasterClassInfoList = AssemblyAttributeSearch<JediAttribute>.FindAllAttr
 var dynamicallyCreatedJediMaster = jediMasterClassInfoList.FirstOrDefault()?.CreateInstanc<IJediMaster>();
 ```
 
+Or if you just want to force load the local class libraries via the Helper and then process with your own Reflection Logic:
+```
+//Eagerly load all local assemblies...
+AssemblyLoadHelper.ForceLoadClassLibraries(this.GetType().Assembly);
+
+//Now you can retrieve and process all types in all assemblies even if they have not yet been lazy initialized by .Net Framework...
+var allTypesInAllLocalAssemblies = AppDomain.CurrentDomain.GetAssemblies().SelectMany(a => a.GetTypes());
+```
 
 ```
 /*

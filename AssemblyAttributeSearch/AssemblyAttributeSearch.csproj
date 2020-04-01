@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>This is a small .Net Standard library/helper to provide greatly simplified convenience methods for dynamically finding, filtering, 
+and initializing classes based on Custom Attributes.</Description>
+    <Copyright>Copyright ©  2020</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/cajuncoding/AssemblyAttributeSearch</PackageProjectUrl>
+    <PackageTags>c# find search custom attribute customattribute class interface class library forced load loading generic reflection factory</PackageTags>
+    <PackageReleaseNotes>Initial version with Unit Tests.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
