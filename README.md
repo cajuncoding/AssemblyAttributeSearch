@@ -19,7 +19,14 @@ NOTE: In the context of Azure Functions, the Assembly.GetExecutingAssembly() met
 project assembly, therefore the local class libraries could not be found and loaded as expected.  The solution is to simply use 
 the Assembly property of a specific type (e.g. this.GetType().Assembly) that exists in the main project assembly and everythign 
 will resolve as expected; as noted in the samples below.
-    
+
+## Project Goals & Benefits (Why did I share this?)
+* Provide a very simple and lightweight library for searching/filtering all assemblies for Classes and their associated Attributes.
+* Implement internal static caching for performance so that reflection calls do not need to be made for the same searches more than once.
+* Return all related data for both the Attribute & Class Types in the response so that no additional Reflection processing is needed.
+** I originally used `FluentAssemblyScanner` (a great looking project) however did not want to have to scan assemblies and then do additional lookups to get my Attribute data again.
+** In addition, much of the `FluentAssemblyScanner` library was unused so something even lighter weight could meet my needs (and many others I believe).
+
 ## Usage
 To get all classes & attribute info. for all classes denoted with a given `JediAttribute` Custom Attribute:
 ```
