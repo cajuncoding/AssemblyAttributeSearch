@@ -20,6 +20,9 @@ project assembly, therefore the local class libraries could not be found and loa
 the Assembly property of a specific type (e.g. this.GetType().Assembly) that exists in the main project assembly and everythign 
 will resolve as expected; as noted in the samples below.
 
+## Nuget Package
+To use behaviors in your project, add the [AssemblyAttributeSearch NuGet package](https://www.nuget.org/packages/AssemblyAttributeSearch/) to your project.
+
 ## Project Goals & Benefits (Why did I share this?)
 * Provide a very simple and lightweight library for searching/filtering all assemblies for Classes and their associated Attributes.
 * Implement internal static caching for performance so that reflection calls do not need to be made for the same searches more than once.
