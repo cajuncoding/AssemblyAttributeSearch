@@ -13,13 +13,18 @@ namespace AssemblyAttributeSearch.Tests
         public void RunTestsInSpecificSequence()
         {
             //FIRST:
+            Console.WriteLine($"Running [{nameof(TestFindingClassesWithoutForcedEagerLoading)}]...");
             TestFindingClassesWithoutForcedEagerLoading();
-            
+
             //SECOND:
+            Console.WriteLine($"Running [{nameof(TestForceEagerLoadingOfReferencedClassLibraries)}]...");
             TestForceEagerLoadingOfReferencedClassLibraries();
 
             //REST:
+            Console.WriteLine($"Running [{nameof(TestFindingClassesWithCustomAttribute)}]...");
             TestFindingClassesWithCustomAttribute();
+
+            Console.WriteLine($"Running [{nameof(TestFindingClassesWithCustomAttributeAndInterfaceFilter)}]...");
             TestFindingClassesWithCustomAttributeAndInterfaceFilter();
         }
 
